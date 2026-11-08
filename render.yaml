@@ -1,0 +1,1 @@
+services:\n  - type: web\n    name: herbs-n-olives\n    env: static\n    buildCommand: echo 'no build'\n    staticPublishPath: .\n

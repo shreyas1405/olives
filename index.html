@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbs n Olives (ಹರ್ಬ್ಸ್ ನ್ ಒಲಿವ್ಸ್) | Italian & Mediterranean Restaurant in RR Nagar, Bengaluru</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            DEFAULT: '#FAF6F0',
+                            card: '#F4EFE6',
+                            hover: '#EBE4D8',
+                            dark: '#E2D8C7'
+                        },
+                        olive: {
+                            DEFAULT: '#1F2E23',
+                            dark: '#141F17',
+                            light: '#2D4233',
+                            accent: '#435E4B'
+                        },
+                        terracotta: {
+                            DEFAULT: '#BC5A36',
+                            dark: '#9E4424',
+                            light: '#D3724F'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#B38F24'
+                        },
+                        charcoal: '#22201E'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(3deg)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05)' }
+                        }
+                    },
+                    animation: {
+                        float: 'float 6s ease-in-out infinite',
+                        pulseGlow: 'pulseGlow 12s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF6F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2E23;
+            border-radius: 4px;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B38F24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gold-shimmer-card {
+            position: relative;
+        }
+        .gold-shimmer-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(212,175,55,0.4), rgba(188,90,54,0.1), rgba(212,175,55,0.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .checkmark-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #D4AF37;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+        .checkmark-check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+        }
+        @keyframes stroke {
+            100% { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body class="bg-stone text-charcoal font-sans antialiased selection:bg-terracotta selection:text-white overflow-x-hidden">
+
+    <!-- Top Announcement & Local Info Bar -->
+    <div class="bg-olive-dark text-stone/90 text-xs py-2.5 px-4 text-center font-light tracking-wide border-b border-olive-light/20 flex justify-between items-center px-4 md:px-12 relative z-50">
+        <div class="hidden sm:flex items-center gap-2 text-gold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span id="live-status-badge" class="font-medium text-stone">Open &bull; Closes 11 PM</span>
+        </div>
+        <div class="mx-auto sm:mx-0 flex items-center gap-2">
+            <i class="fa-solid fa-triangle-exclamation text-amber-400 text-xs"></i>
+            <span>Karnataka Rajyotsava / Festive Holidays might affect operating hours</span>
+        </div>
+        <div class="hidden md:flex items-center gap-4 text-stone/80">
+            <a href="tel:09740280453" class="hover:text-gold transition-colors"><i class="fa-solid fa-phone text-gold mr-1"></i> 097402 80453</a>
+            <a href="#location-info" class="hover:text-gold transition-colors"><i class="fa-solid fa-location-dot text-gold mr-1"></i> Ideal Homes Twp, RR Nagar</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="sticky top-0 z-40 bg-stone/95 backdrop-blur-md transition-all duration-300 border-b border-olive/10 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo with Kannada Subtitle -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-full bg-olive flex items-center justify-center text-gold group-hover:bg-terracotta group-hover:scale-105 transition-all duration-300 shadow-md">
+                        <i class="fa-solid fa-utensils text-lg"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-olive group-hover:text-terracotta transition-colors">Herbs n Olives</span>
+                        <span class="text-[11px] font-medium text-terracotta -mt-1 tracking-wide">ಹರ್ಬ್ಸ್ ನ್ ಒಲಿವ್ಸ್ &bull; RR Nagar</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-7 text-sm font-medium text-olive">
+                    <a href="#location-info" class="hover:text-terracotta transition-colors py-1">Business Info</a>
+                    <a href="#menu" class="hover:text-terracotta transition-colors py-1">Menu</a>
+                    <a href="#google-reviews" class="hover:text-terracotta transition-colors py-1 flex items-center gap-1.5">
+                        <span>Google Reviews</span>
+                        <span class="bg-amber-100 text-amber-800 text-[10px] px-1.5 py-0.5 rounded-full font-bold">4.4★</span>
+                    </a>
+                    <a href="#about" class="hover:text-terracotta transition-colors py-1">Our Story</a>
+                    <a href="#experience" class="hover:text-terracotta transition-colors py-1">Reserve Table</a>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="tel:09740280453" class="bg-stone-hover text-olive hover:bg-olive hover:text-stone px-4 py-2 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 border border-olive/20">
+                        <i class="fa-solid fa-phone text-xs"></i> Call Now
+                    </a>
+                    <button onclick="openOrderModal()" class="bg-terracotta hover:bg-terracotta-dark text-stone text-xs font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-all flex items-center gap-1.5">
+                        <i class="fa-solid fa-bag-shopping"></i> Order Online
+                    </button>
+                    <button onclick="scrollToReservation()" class="bg-olive hover:bg-olive-dark text-stone text-xs font-semibold px-5 py-2 rounded-full shadow-md hover:scale-105 transition-all border border-gold/40">
+                        Reserve Table
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <a href="tel:09740280453" class="text-olive p-2"><i class="fa-solid fa-phone text-lg"></i></a>
+                    <button id="mobile-menu-btn" aria-label="Toggle Mobile Menu" class="text-olive p-2 rounded-lg hover:bg-stone-hover transition-colors">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-stone border-b border-olive/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#location-info" onclick="closeMobileMenu()" class="block px-3 py-2 text-base font-medium text-olive hover:bg-stone-card rounded-md">Business & Address Info</a>
+            <a href="#menu" onclick="closeMobileMenu()" class="block px-3 py-2 text-base font-medium text-olive hover:bg-stone-card rounded-md">Menu & Specials</a>
+            <a href="#google-reviews" onclick="closeMobileMenu()" class="block px-3 py-2 text-base font-medium text-olive hover:bg-stone-card rounded-md">Google Reviews (4.4★)</a>
+            <a href="#about" onclick="closeMobileMenu()" class="block px-3 py-2 text-base font-medium text-olive hover:bg-stone-card rounded-md">Our Story</a>
+            <a href="#experience" onclick="closeMobileMenu()" class="block px-3 py-2 text-base font-medium text-olive hover:bg-stone-card rounded-md">Reserve a Table</a>
+            <div class="grid grid-cols-2 gap-2 pt-2">
+                <button onclick="openOrderModal(); closeMobileMenu();" class="w-full bg-terracotta text-stone py-2.5 rounded-xl font-medium text-xs flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-bag-shopping"></i> Order Online
+                </button>
+                <a href="https://maps.google.com/?q=Herbs+n+Olives+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="w-full bg-olive text-stone py-2.5 rounded-xl font-medium text-xs flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-location-arrow"></i> Directions
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[85vh] flex items-center justify-center bg-olive-dark text-stone overflow-hidden">
+        <canvas id="hero-particles" class="absolute inset-0 z-10 pointer-events-none opacity-60"></canvas>
+
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=2000&q=80" alt="Herbs n Olives Ambiance" class="w-full h-full object-cover object-center scale-105 animate-[pulseGlow_12s_ease-in-out_infinite] opacity-35">
+            <div class="absolute inset-0 bg-gradient-to-b from-olive-dark/85 via-olive-dark/70 to-olive-dark"></div>
+        </div>
+
+        <div class="relative z-20 max-w-4xl mx-auto text-center px-4 sm:px-6 py-20 flex flex-col items-center">
+            
+            <!-- Google Rating Pill -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone/10 backdrop-blur-md border border-gold/40 text-stone text-xs font-semibold mb-6 animate-float">
+                <div class="flex text-amber-400 text-xs">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <span class="text-gold font-bold">4.4 / 5.0</span>
+                <span class="text-stone/70">&bull; (747 Google Reviews)</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-stone mb-4 leading-tight">
+                Herbs n Olives <br>
+                <span class="italic font-normal text-gradient-gold text-3xl sm:text-5xl">ಹರ್ಬ್ಸ್ ನ್ ಒಲಿವ್ಸ್</span>
+            </h1>
+
+            <p class="text-stone/90 text-sm sm:text-base md:text-lg max-w-2xl font-light mb-8 leading-relaxed">
+                Authentic Italian & Mediterranean dining experience in Ideal Homes Township, Rajarajeshwari Nagar, Bengaluru. Wood-fired pizzas, handcrafted pastas, and rich herbal mocktails.
+            </p>
+
+            <!-- Quick Service Badges -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8 text-xs font-medium text-stone/90">
+                <span class="bg-stone/10 border border-stone/20 px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                    <i class="fa-solid fa-utensils text-gold"></i> Dine-in
+                </span>
+                <span class="bg-stone/10 border border-stone/20 px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                    <i class="fa-solid fa-car text-gold"></i> Kerbside Pickup
+                </span>
+                <span class="bg-stone/10 border border-stone/20 px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                    <i class="fa-solid fa-truck-ramp-box text-gold"></i> Delivery
+                </span>
+                <span class="bg-stone/10 border border-gold/30 text-gold font-semibold px-3 py-1.5 rounded-full">
+                    ₹400–600 per person
+                </span>
+            </div>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <button onclick="scrollToReservation()" class="px-8 py-3.5 bg-terracotta hover:bg-terracotta-dark text-stone rounded-full font-medium shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-gold"></i>
+                    <span>Reserve a Table</span>
+                </button>
+                <button onclick="openOrderModal()" class="px-8 py-3.5 bg-olive-light hover:bg-olive text-stone rounded-full font-medium border border-gold/40 hover:scale-105 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-gold"></i>
+                    <span>Order Online</span>
+                </button>
+                <a href="https://maps.google.com/?q=Herbs+n+Olives+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="px-6 py-3.5 bg-transparent border border-stone/50 hover:bg-stone/10 text-stone rounded-full font-medium transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-location-dot text-gold"></i>
+                    <span>Get Directions</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Google Business Overview & Location Card Section -->
+    <section id="location-info" class="py-16 bg-stone border-b border-olive/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-stone-card rounded-3xl p-6 sm:p-10 border border-olive/15 shadow-md gold-shimmer-card">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left: Google Info Details -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-olive text-stone text-xs uppercase font-bold px-3 py-1 rounded-full">Verified Business</span>
+                            <span class="text-terracotta font-serif font-bold text-sm">₹400–600 per person</span>
+                        </div>
+
+                        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-olive">Herbs n Olives (RR Nagar)</h2>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-charcoal/80">
+                            <div class="flex items-start gap-3 bg-stone p-3.5 rounded-xl border border-olive/10">
+                                <i class="fa-solid fa-location-dot text-terracotta text-base mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-olive font-semibold">Address</strong>
+                                    <span>96, 12th Cross Rd, Ideal Homes Twp, Rajarajeshwari Nagar, Bengaluru, Karnataka 560098</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-stone p-3.5 rounded-xl border border-olive/10">
+                                <i class="fa-solid fa-map-pin text-terracotta text-base mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-olive font-semibold">Plus Code</strong>
+                                    <span>WGFC+CR Bengaluru, Karnataka</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-stone p-3.5 rounded-xl border border-olive/10">
+                                <i class="fa-solid fa-clock text-terracotta text-base mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-olive font-semibold">Hours</strong>
+                                    <span>Open &bull; Closes 11:00 PM (Daily)</span>
+                                    <p class="text-[11px] text-amber-700 mt-0.5">*Holidays may affect hours</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-stone p-3.5 rounded-xl border border-olive/10">
+                                <i class="fa-solid fa-phone text-terracotta text-base mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-olive font-semibold">Phone</strong>
+                                    <a href="tel:09740280453" class="hover:text-terracotta font-bold text-olive">097402 80453</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Options Tags -->
+                        <div class="pt-2 flex flex-wrap gap-2 text-xs">
+                            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-check text-xs"></i> Dine-in
+                            </span>
+                            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-check text-xs"></i> Kerbside pickup
+                            </span>
+                            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-check text-xs"></i> Delivery
+                            </span>
+                            <span class="bg-stone border border-olive/20 text-olive px-3 py-1 rounded-full font-medium">
+                                Reported by 158+ visitors
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Google Action Quick Card -->
+                    <div class="lg:col-span-5 bg-olive text-stone p-6 rounded-2xl border border-gold/30 text-center space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-gold/10 text-gold mx-auto flex items-center justify-center text-2xl font-serif font-bold">
+                            4.4★
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-stone">Visiting Us Today?</h3>
+                            <p class="text-xs text-stone/70 mt-1">Easily find directions or book a guaranteed table for lunch or dinner.</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <a href="https://maps.google.com/?q=Herbs+n+Olives+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="bg-terracotta hover:bg-terracotta-dark text-stone py-2.5 rounded-xl font-medium text-xs flex items-center justify-center gap-1.5 shadow">
+                                <i class="fa-solid fa-diamond-turn-right"></i> Directions
+                            </a>
+                            <a href="tel:09740280453" class="bg-stone/10 hover:bg-stone/20 text-stone border border-stone/30 py-2.5 rounded-xl font-medium text-xs flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-phone"></i> Call Direct
+                            </a>
+                        </div>
+                        <a href="https://www.instagram.com" target="_blank" class="block text-xs text-gold hover:underline pt-1">
+                            <i class="fa-brands fa-instagram mr-1"></i> Follow instagram.com/herbsnolives
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Filterable Menu Section -->
+    <section id="menu" class="py-20 bg-stone-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-terracotta text-xs font-semibold uppercase tracking-widest block mb-2">Artisanal Italian & Mediterranean</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-olive mb-4">Popular Menu Dishes</h2>
+                <p class="text-charcoal/70 text-sm">Prices range ₹400–600 per person. Click any dish to view ingredients and flavor details.</p>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="max-w-xl mx-auto mb-10 space-y-4">
+                <div class="relative">
+                    <input type="text" id="menu-search-input" onkeyup="handleMenuSearch()" placeholder="Search menu (e.g. Pizza, Pasta, Tiramisu, Pesto)..." class="w-full bg-stone border border-olive/20 rounded-full px-5 py-3.5 pl-12 text-sm text-olive placeholder-charcoal/40 focus:outline-none focus:border-terracotta shadow-xs">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4.5 top-4 text-olive/40 text-sm"></i>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-2 text-xs">
+                    <span class="text-charcoal/60 font-medium">Dietary Filter:</span>
+                    <button onclick="setDietaryFilter('all')" class="dietary-chip active bg-olive text-stone px-3 py-1 rounded-full transition-all">All</button>
+                    <button onclick="setDietaryFilter('Veg')" class="dietary-chip bg-stone border border-olive/20 text-olive hover:bg-stone-hover px-3 py-1 rounded-full transition-all">Veg</button>
+                    <button onclick="setDietaryFilter('Vegan')" class="dietary-chip bg-stone border border-olive/20 text-olive hover:bg-stone-hover px-3 py-1 rounded-full transition-all">Vegan</button>
+                    <button onclick="setDietaryFilter('Chef\'s Special')" class="dietary-chip bg-stone border border-olive/20 text-olive hover:bg-stone-hover px-3 py-1 rounded-full transition-all">Chef's Special</button>
+                </div>
+            </div>
+
+            <!-- Menu Category Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+                <button onclick="filterCategory('all', event)" class="menu-tab active bg-olive text-stone px-5 py-2.5 rounded-full text-sm font-medium transition-all">All Items</button>
+                <button onclick="filterCategory('starters', event)" class="menu-tab bg-stone border border-olive/20 text-olive hover:bg-olive/10 px-5 py-2.5 rounded-full text-sm font-medium transition-all">Starters & Bruschetta</button>
+                <button onclick="filterCategory('pizza', event)" class="menu-tab bg-stone border border-olive/20 text-olive hover:bg-olive/10 px-5 py-2.5 rounded-full text-sm font-medium transition-all">Wood-Fired Pizza</button>
+                <button onclick="filterCategory('pasta', event)" class="menu-tab bg-stone border border-olive/20 text-olive hover:bg-olive/10 px-5 py-2.5 rounded-full text-sm font-medium transition-all">Handmade Pasta</button>
+                <button onclick="filterCategory('desserts', event)" class="menu-tab bg-stone border border-olive/20 text-olive hover:bg-olive/10 px-5 py-2.5 rounded-full text-sm font-medium transition-all">Desserts & Mocktails</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Dish Popup Modal -->
+    <div id="dish-modal" class="fixed inset-0 z-50 hidden bg-olive-dark/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-stone rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl transform transition-all border border-gold/30 relative">
+            <button onclick="closeDishModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone/80 text-olive hover:bg-terracotta hover:text-stone flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="dish-modal-content">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Real Google Reviews Section (Replaces Old Reviews) -->
+    <section id="google-reviews" class="py-24 bg-stone border-t border-olive/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-bold mb-3">
+                    <i class="fa-brands fa-google text-amber-700"></i> Google Business Rating
+                </div>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-olive mb-2">4.4 Star Rating & Reviews</h2>
+                <p class="text-charcoal/70 text-sm">Based on 747+ verified dining reviews for Herbs n Olives in Rajarajeshwari Nagar.</p>
+            </div>
+
+            <!-- Rating Breakdown Card -->
+            <div class="bg-stone-card rounded-3xl p-6 sm:p-8 mb-12 border border-olive/10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center shadow-sm">
+                <!-- Left Rating Score -->
+                <div class="md:col-span-4 text-center md:border-r border-olive/10 md:pr-8">
+                    <span class="font-serif text-6xl font-bold text-olive block">4.4</span>
+                    <div class="flex justify-center text-amber-400 text-lg my-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span class="text-xs text-charcoal/70 font-medium">747 Total Google Reviews</span>
+                    <p class="text-[11px] text-terracotta font-semibold mt-2">Top rated Italian spot in RR Nagar</p>
+                </div>
+
+                <!-- Middle Rating Distribution Bars -->
+                <div class="md:col-span-5 space-y-2 text-xs">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 font-medium">5 ★</span>
+                        <div class="flex-1 bg-stone-hover h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600 h-full w-[78%]"></div>
+                        </div>
+                        <span class="w-8 text-right text-charcoal/60">78%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 font-medium">4 ★</span>
+                        <div class="flex-1 bg-stone-hover h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-emerald-500 h-full w-[14%]"></div>
+                        </div>
+                        <span class="w-8 text-right text-charcoal/60">14%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 font-medium">3 ★</span>
+                        <div class="flex-1 bg-stone-hover h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-amber-400 h-full w-[5%]"></div>
+                        </div>
+                        <span class="w-8 text-right text-charcoal/60">5%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 font-medium">2 ★</span>
+                        <div class="flex-1 bg-stone-hover h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-orange-400 h-full w-[2%]"></div>
+                        </div>
+                        <span class="w-8 text-right text-charcoal/60">2%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 font-medium">1 ★</span>
+                        <div class="flex-1 bg-stone-hover h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-red-400 h-full w-[1%]"></div>
+                        </div>
+                        <span class="w-8 text-right text-charcoal/60">1%</span>
+                    </div>
+                </div>
+
+                <!-- Right Review Action -->
+                <div class="md:col-span-3 text-center space-y-3">
+                    <a href="https://maps.google.com/?q=Herbs+n+Olives+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="w-full bg-olive hover:bg-olive-dark text-stone py-3 rounded-xl font-medium text-xs flex items-center justify-center gap-2 shadow">
+                        <i class="fa-brands fa-google"></i>
+                        <span>Write a Google Review</span>
+                    </a>
+                    <a href="https://maps.google.com/?q=Herbs+n+Olives+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="block text-xs text-terracotta hover:underline font-semibold">
+                        View All 747 Google Reviews &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Customer Reviews Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-stone-card p-6 rounded-2xl border border-olive/10 shadow-xs flex flex-col justify-between gold-shimmer-card">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-[10px] text-charcoal/50">2 weeks ago</span>
+                        </div>
+                        <p class="text-xs text-charcoal/80 leading-relaxed italic mb-4">
+                            "One of the cozy dining spots in RR Nagar! Their wood-fired pizza dough was soft yet crispy. The Pesto Pasta and herbal mocktails are highly recommended for families."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-3 border-t border-olive/10">
+                        <div class="w-8 h-8 rounded-full bg-olive text-gold font-bold text-xs flex items-center justify-center">AR</div>
+                        <div>
+                            <h4 class="font-bold text-olive text-xs">Ananya Rao</h4>
+                            <p class="text-[10px] text-charcoal/50">Local Guide &bull; Bengaluru</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-stone-card p-6 rounded-2xl border border-olive/10 shadow-xs flex flex-col justify-between gold-shimmer-card">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-[10px] text-charcoal/50">1 month ago</span>
+                        </div>
+                        <p class="text-xs text-charcoal/80 leading-relaxed italic mb-4">
+                            "Great ambiance in Ideal Homes Township! Pricing is very fair around ₹500 per person. Loved the classic Bruschetta and warm Tiramisu dessert."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-3 border-t border-olive/10">
+                        <div class="w-8 h-8 rounded-full bg-terracotta text-stone font-bold text-xs flex items-center justify-center">SK</div>
+                        <div>
+                            <h4 class="font-bold text-olive text-xs">Suresh Kumar</h4>
+                            <p class="text-[10px] text-charcoal/50">Verified Diner &bull; RR Nagar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-stone-card p-6 rounded-2xl border border-olive/10 shadow-xs flex flex-col justify-between gold-shimmer-card">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-[10px] text-charcoal/50">3 weeks ago</span>
+                        </div>
+                        <p class="text-xs text-charcoal/80 leading-relaxed italic mb-4">
+                            "Prompt service and kerbside pickup option works seamlessly. The pasta sauces taste authentic and rich with olive oil and oregano."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-3 border-t border-olive/10">
+                        <div class="w-8 h-8 rounded-full bg-olive-light text-stone font-bold text-xs flex items-center justify-center">PM</div>
+                        <div>
+                            <h4 class="font-bold text-olive text-xs">Pooja Mehra</h4>
+                            <p class="text-[10px] text-charcoal/50">Google Reviewer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Table Reservation Wizard Engine -->
+    <section id="experience" class="py-24 bg-olive text-stone relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-gold text-xs font-semibold uppercase tracking-widest">Book Your Dining Experience</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight">Reserve a Table at Herbs n Olives</h2>
+                    <p class="text-stone/80 text-sm leading-relaxed">
+                        Planning a lunch or dinner in Rajarajeshwari Nagar? Reserve your preferred table in advance for seamless dining.
+                    </p>
+
+                    <div class="space-y-3 pt-2 text-xs">
+                        <div class="flex items-center gap-3 bg-olive-dark/60 p-3.5 rounded-xl border border-gold/20">
+                            <i class="fa-solid fa-clock text-gold text-base"></i>
+                            <div>
+                                <strong class="block text-stone">Operating Hours</strong>
+                                <span class="text-stone/70">11:30 AM – 11:00 PM Daily</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-olive-dark/60 p-3.5 rounded-xl border border-gold/20">
+                            <i class="fa-solid fa-phone text-gold text-base"></i>
+                            <div>
+                                <strong class="block text-stone">Direct Reservations</strong>
+                                <a href="tel:09740280453" class="text-gold font-bold">097402 80453</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Wizard Card -->
+                <div class="lg:col-span-7">
+                    <div class="bg-stone text-charcoal rounded-3xl p-6 sm:p-10 shadow-2xl border border-gold/40">
+                        <div class="mb-6">
+                            <div class="flex justify-between items-center text-xs font-semibold text-olive uppercase tracking-wider mb-2">
+                                <span id="step-title">Step 1: Party Size & Date</span>
+                                <span id="step-indicator">Step 1 of 3</span>
+                            </div>
+                            <div class="w-full bg-stone-hover h-2 rounded-full overflow-hidden">
+                                <div id="step-progress-bar" class="bg-terracotta h-full w-1/3 transition-all duration-500"></div>
+                            </div>
+                        </div>
+
+                        <form id="wizard-reservation-form" onsubmit="submitReservationWizard(event)">
+                            
+                            <!-- STEP 1 -->
+                            <div id="wizard-step-1" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-olive uppercase tracking-wider mb-2">Number of Guests</label>
+                                        <select id="wiz-guests" class="w-full bg-stone-card border border-olive/20 rounded-xl px-4 py-3 text-sm text-olive">
+                                            <option value="2 Guests">2 Guests (Couples)</option>
+                                            <option value="4 Guests">4 Guests (Standard)</option>
+                                            <option value="6 Guests">6 Guests (Family Table)</option>
+                                            <option value="8+ Guests">8+ Guests (Group Party)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-olive uppercase tracking-wider mb-2">Dining Date</label>
+                                        <input type="date" id="wiz-date" required class="w-full bg-stone-card border border-olive/20 rounded-xl px-4 py-3 text-sm text-olive">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-olive uppercase tracking-wider mb-2">Preferred Time Slot</label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                        <button type="button" onclick="selectTimeSlot('1:00 PM', this)" class="time-slot-btn bg-stone-card border border-olive/20 text-olive text-xs py-2.5 rounded-lg hover:border-terracotta">1:00 PM</button>
+                                        <button type="button" onclick="selectTimeSlot('7:30 PM', this)" class="time-slot-btn bg-stone-card border border-olive/20 text-olive text-xs py-2.5 rounded-lg hover:border-terracotta active">7:30 PM</button>
+                                        <button type="button" onclick="selectTimeSlot('8:45 PM', this)" class="time-slot-btn bg-stone-card border border-olive/20 text-olive text-xs py-2.5 rounded-lg hover:border-terracotta">8:45 PM</button>
+                                        <button type="button" onclick="selectTimeSlot('9:45 PM', this)" class="time-slot-btn bg-stone-card border border-olive/20 text-olive text-xs py-2.5 rounded-lg hover:border-terracotta">9:45 PM</button>
+                                    </div>
+                                </div>
+
+                                <button type="button" onclick="goToStep(2)" class="w-full bg-olive hover:bg-olive-dark text-stone py-3.5 rounded-xl font-medium text-xs transition-all flex items-center justify-center gap-2">
+                                    <span>Next: Seating Preference</span>
+                                    <i class="fa-solid fa-arrow-right text-xs text-gold"></i>
+                                </button>
+                            </div>
+
+                            <!-- STEP 2 -->
+                            <div id="wizard-step-2" class="hidden space-y-4">
+                                <label class="block text-xs font-semibold text-olive uppercase tracking-wider">Choose Atmosphere</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <div onclick="selectSeatingArea('Main Dining Area', this)" class="seating-option-card bg-stone-card border-2 border-terracotta p-4 rounded-xl cursor-pointer">
+                                        <h4 class="font-serif font-bold text-olive text-sm">Main Dining</h4>
+                                        <p class="text-[11px] text-charcoal/60 mt-1">Cozy indoor restaurant seating</p>
+                                    </div>
+                                    <div onclick="selectSeatingArea('Patio Terrace', this)" class="seating-option-card bg-stone-card border border-olive/20 p-4 rounded-xl cursor-pointer">
+                                        <h4 class="font-serif font-bold text-olive text-sm">Outdoor Patio</h4>
+                                        <p class="text-[11px] text-charcoal/60 mt-1">Breezy outdoor seating</p>
+                                    </div>
+                                    <div onclick="selectSeatingArea('Family Corner', this)" class="seating-option-card bg-stone-card border border-olive/20 p-4 rounded-xl cursor-pointer">
+                                        <h4 class="font-serif font-bold text-olive text-sm">Family Corner</h4>
+                                        <p class="text-[11px] text-charcoal/60 mt-1">Spacious table for large groups</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3 pt-2">
+                                    <button type="button" onclick="goToStep(1)" class="w-1/3 bg-stone-hover text-olive py-3.5 rounded-xl font-medium text-xs">Back</button>
+                                    <button type="button" onclick="goToStep(3)" class="w-2/3 bg-olive hover:bg-olive-dark text-stone py-3.5 rounded-xl font-medium text-xs flex items-center justify-center gap-2">
+                                        <span>Next: Contact Info</span>
+                                        <i class="fa-solid fa-arrow-right text-xs text-gold"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3 -->
+                            <div id="wizard-step-3" class="hidden space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-olive uppercase tracking-wider mb-1">Full Name</label>
+                                        <input type="text" id="wiz-name" placeholder="Rohan Sharma" required class="w-full bg-stone-card border border-olive/20 rounded-xl px-4 py-2.5 text-sm text-olive">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-olive uppercase tracking-wider mb-1">Phone Number</label>
+                                        <input type="tel" id="wiz-phone" placeholder="0987654321" required class="w-full bg-stone-card border border-olive/20 rounded-xl px-4 py-2.5 text-sm text-olive">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-olive uppercase tracking-wider mb-1">Special Requests (Optional)</label>
+                                    <input type="text" id="wiz-notes" placeholder="Birthday celebration, high chair needed..." class="w-full bg-stone-card border border-olive/20 rounded-xl px-4 py-2.5 text-sm text-olive">
+                                </div>
+
+                                <div class="flex gap-3 pt-2">
+                                    <button type="button" onclick="goToStep(2)" class="w-1/3 bg-stone-hover text-olive py-3.5 rounded-xl font-medium text-xs">Back</button>
+                                    <button type="submit" class="w-2/3 bg-terracotta hover:bg-terracotta-dark text-stone py-3.5 rounded-xl font-medium text-xs flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-circle-check text-gold"></i>
+                                        <span>Confirm Reservation</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-olive-dark/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-stone rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border border-gold/40 relative">
+            <div class="w-16 h-16 mx-auto mb-4">
+                <svg class="w-full h-full" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="23"/>
+                    <path class="checkmark-check" fill="none" stroke="#D4AF37" stroke-width="3" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+            </div>
+            
+            <h3 class="font-serif text-2xl font-bold text-olive mb-1">Table Reserved!</h3>
+            <p class="text-xs text-charcoal/70 mb-4">Herbs n Olives (Rajarajeshwari Nagar)</p>
+
+            <div id="booking-summary-box" class="bg-stone-card border border-olive/10 rounded-2xl p-4 text-left text-xs space-y-2 mb-6 text-olive font-medium">
+            </div>
+
+            <button onclick="closeBookingModal()" class="w-full bg-olive text-stone py-3 rounded-xl font-medium text-xs hover:bg-olive-dark">
+                Close & Done
+            </button>
+        </div>
+    </div>
+
+    <!-- Order Online Modal -->
+    <div id="order-modal" class="fixed inset-0 z-50 hidden bg-olive-dark/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-stone rounded-3xl max-w-md w-full p-8 shadow-2xl text-center border border-gold/40 relative">
+            <button onclick="closeOrderModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-hover text-olive flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <i class="fa-solid fa-bag-shopping text-terracotta text-4xl mb-3"></i>
+            <h3 class="font-serif text-2xl font-bold text-olive mb-2">Order Delivery or Pickup</h3>
+            <p class="text-xs text-charcoal/70 mb-6">Choose how you would like to enjoy Herbs n Olives from RR Nagar:</p>
+
+            <div class="space-y-3 text-xs">
+                <a href="tel:09740280453" class="w-full bg-terracotta text-stone py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow">
+                    <i class="fa-solid fa-phone"></i> Call Direct (097402 80453)
+                </a>
+                <button onclick="alert('Redirecting to Swiggy / Zomato food delivery partners...'); closeOrderModal();" class="w-full bg-stone-card border border-olive/20 text-olive py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-stone-hover">
+                    <i class="fa-solid fa-motorcycle"></i> Order via Delivery Apps
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-olive-dark text-stone pt-16 pb-12 border-t border-olive-light/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-full bg-terracotta flex items-center justify-center text-gold">
+                            <i class="fa-solid fa-utensils text-sm"></i>
+                        </div>
+                        <span class="font-serif text-lg font-bold text-stone">Herbs n Olives</span>
+                    </div>
+                    <p class="text-xs text-stone/70 leading-relaxed">
+                         Italian & Mediterranean restaurant serving authentic wood-fired pizzas and artisanal pasta in Bengaluru.
+                    </p>
+                    <p class="text-xs text-gold font-bold">ಹರ್ಬ್ಸ್ ನ್ ಒಲಿವ್ಸ್ &bull; Rajarajeshwari Nagar</p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-gold text-sm mb-3">Exact Address</h4>
+                    <p class="text-xs text-stone/80 leading-relaxed mb-2">
+                        96, 12th Cross Rd, Ideal Homes Twp, Rajarajeshwari Nagar, Bengaluru, Karnataka 560098
+                    </p>
+                    <p class="text-xs text-stone/60">Plus Code: WGFC+CR Bengaluru</p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-gold text-sm mb-3">Contact & Ordering</h4>
+                    <ul class="text-xs text-stone/80 space-y-2">
+                        <li><i class="fa-solid fa-phone text-gold mr-1.5"></i> <a href="tel:09740280453" class="hover:text-gold">097402 80453</a></li>
+                        <li><i class="fa-solid fa-clock text-gold mr-1.5"></i> Open Daily: 11:30 AM – 11:00 PM</li>
+                        <li><i class="fa-solid fa-tag text-gold mr-1.5"></i> ₹400–600 per person</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif font-bold text-gold text-sm mb-3">Google Rating</h4>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="font-bold text-lg text-stone">4.4 / 5.0</span>
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-stone/70">747+ Verified Google Reviews</p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-stone/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-stone/50 gap-3">
+                <p>&copy; 2026 Herbs n Olives (ಹರ್ಬ್ಸ್ ನ್ ಒಲಿವ್ಸ್). All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="https://maps.google.com/?q=Herbs+n+Olives+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="hover:text-gold">Google Maps</a>
+                    <a href="https://instagram.com" target="_blank" class="hover:text-gold">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Data & Logic -->
+    <script>
+        const menuDishes = [
+            {
+                id: 1,
+                name: "Classic Garlic Butter Bruschetta",
+                category: "starters",
+                dietary: "Veg",
+                price: "₹240",
+                tags: ["Veg", "Popular"],
+                image: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=600&q=80",
+                description: "Toasted garlic bread topped with marinated fresh tomatoes, basil leaves, extra virgin olive oil, and balsamic reduction.",
+                ingredients: "Artisanal Bread, Cherry Tomatoes, Fresh Basil, EVOO, Balsamic Glaze."
+            },
+            {
+                id: 2,
+                name: "Wood-Fired Margherita Pizza",
+                category: "pizza",
+                dietary: "Veg",
+                price: "₹380",
+                tags: ["Veg", "Chef's Special"],
+                image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=600&q=80",
+                description: "Authentic wood-fired crust topped with San Marzano tomato sauce, fresh mozzarella, and sweet basil.",
+                ingredients: "Hand-tossed Dough, Mozzarella, Fresh Basil, Italian Tomato Sauce."
+            },
+            {
+                id: 3,
+                name: "Creamy Pesto Penne Pasta",
+                category: "pasta",
+                dietary: "Veg",
+                price: "₹360",
+                tags: ["Veg", "Popular"],
+                image: "https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=600&q=80",
+                description: "Penne pasta tossed in rich basil-pine nut pesto cream sauce with roasted garlic and parmesan.",
+                ingredients: "Penne Pasta, Fresh Genovese Basil, Toast Pine Nuts, Cream, Parmesan."
+            },
+            {
+                id: 4,
+                name: "Herbal Garden Pizza",
+                category: "pizza",
+                dietary: "Vegan",
+                price: "₹420",
+                tags: ["Vegan"],
+                image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80",
+                description: "Wood-fired crust loaded with bell peppers, olives, oregano, sun-dried tomatoes, and olive oil drizzle.",
+                ingredients: "Bell Peppers, Black Olives, Wild Oregano, Sun-dried Tomatoes."
+            },
+            {
+                id: 5,
+                name: "Classic Italian Tiramisu",
+                category: "desserts",
+                dietary: "Veg",
+                price: "₹260",
+                tags: ["Veg", "Chef's Special"],
+                image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80",
+                description: "Traditional espresso-soaked ladyfingers layered with mascarpone cream and dusted with dark cocoa powder.",
+                ingredients: "Espresso, Mascarpone, Ladyfinger Biscuits, Dark Cocoa."
+            },
+            {
+                id: 6,
+                name: "Sparkling Berry Herbal Mocktail",
+                category: "desserts",
+                dietary: "Vegan",
+                price: "₹180",
+                tags: ["Vegan"],
+                image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80",
+                description: "Refreshing blend of muddled wild berries, fresh mint leaves, lemon juice, and sparkling soda.",
+                ingredients: "Muddled Berries, Mint, Lemon Zest, Soda."
+            }
+        ];
+
+        let currentCategoryFilter = 'all';
+        let currentDietaryFilter = 'all';
+        let currentSearchQuery = '';
+
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = '';
+
+            const filtered = menuDishes.filter(dish => {
+                const matchesCategory = currentCategoryFilter === 'all' || dish.category === currentCategoryFilter;
+                const matchesDietary = currentDietaryFilter === 'all' || dish.tags.includes(currentDietaryFilter);
+                const matchesSearch = currentSearchQuery === '' || 
+                    dish.name.toLowerCase().includes(currentSearchQuery) || 
+                    dish.description.toLowerCase().includes(currentSearchQuery);
+
+                return matchesCategory && matchesDietary && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-10">
+                        <i class="fa-solid fa-utensils text-olive/30 text-3xl mb-2"></i>
+                        <p class="text-charcoal/60 text-xs">No menu items found matching your search.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(dish => {
+                const card = document.createElement('div');
+                card.className = "bg-stone rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-olive/10 group cursor-pointer flex flex-col justify-between gold-shimmer-card";
+                card.onclick = () => openDishModal(dish.id);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-44 overflow-hidden">
+                            <img src="${dish.image}" alt="${dish.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-2.5 left-2.5">
+                                <span class="bg-stone/90 text-olive text-[10px] font-bold px-2 py-0.5 rounded-full border border-olive/20">${dish.dietary}</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-1.5">
+                                <h3 class="font-serif font-bold text-base text-olive group-hover:text-terracotta transition-colors">${dish.name}</h3>
+                                <span class="font-serif font-bold text-terracotta text-base ml-2">${dish.price}</span>
+                            </div>
+                            <p class="text-xs text-charcoal/70 line-clamp-2">${dish.description}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 text-xs text-olive font-medium flex items-center justify-between">
+                        <span>View Details</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-terracotta"></i>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCategory(category, event) {
+            currentCategoryFilter = category;
+            document.querySelectorAll('.menu-tab').forEach(tab => {
+                tab.classList.remove('bg-olive', 'text-stone', 'active');
+                tab.classList.add('bg-stone', 'text-olive', 'border', 'border-olive/20');
+            });
+            event.target.classList.remove('bg-stone', 'text-olive', 'border', 'border-olive/20');
+            event.target.classList.add('bg-olive', 'text-stone', 'active');
+            renderMenu();
+        }
+
+        function setDietaryFilter(dietary) {
+            currentDietaryFilter = dietary;
+            document.querySelectorAll('.dietary-chip').forEach(chip => {
+                chip.classList.remove('bg-olive', 'text-stone', 'active');
+                chip.classList.add('bg-stone', 'text-olive');
+            });
+            event.target.classList.remove('bg-stone', 'text-olive');
+            event.target.classList.add('bg-olive', 'text-stone', 'active');
+            renderMenu();
+        }
+
+        function handleMenuSearch() {
+            currentSearchQuery = document.getElementById('menu-search-input').value.toLowerCase().trim();
+            renderMenu();
+        }
+
+        function openDishModal(id) {
+            const dish = menuDishes.find(d => d.id === id);
+            if (!dish) return;
+
+            const modalContent = document.getElementById('dish-modal-content');
+            modalContent.innerHTML = `
+                <div class="relative h-56">
+                    <img src="${dish.image}" alt="${dish.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-baseline mb-2">
+                        <h3 class="font-serif text-xl font-bold text-olive">${dish.name}</h3>
+                        <span class="font-serif text-xl font-bold text-terracotta">${dish.price}</span>
+                    </div>
+                    <p class="text-xs text-charcoal/80 mb-4">${dish.description}</p>
+                    <div class="bg-stone-card p-3 rounded-xl border border-olive/10 text-xs mb-4">
+                        <strong class="block text-olive mb-1">Key Ingredients:</strong>
+                        <span class="text-charcoal/70">${dish.ingredients}</span>
+                    </div>
+                    <button onclick="scrollToReservation(); closeDishModal();" class="w-full bg-olive hover:bg-olive-dark text-stone py-3 rounded-xl font-medium text-xs">
+                        Reserve a Table to Enjoy This Dish
+                    </button>
+                </div>
+            `;
+            document.getElementById('dish-modal').classList.remove('hidden');
+        }
+
+        function closeDishModal() {
+            document.getElementById('dish-modal').classList.add('hidden');
+        }
+
+        let wizardData = { guests: '2 Guests', date: '', time: '7:30 PM', seating: 'Main Dining Area', name: '', phone: '' };
+
+        function goToStep(step) {
+            document.getElementById('wizard-step-1').classList.add('hidden');
+            document.getElementById('wizard-step-2').classList.add('hidden');
+            document.getElementById('wizard-step-3').classList.add('hidden');
+
+            document.getElementById(`wizard-step-${step}`).classList.remove('hidden');
+            document.getElementById('step-indicator').textContent = `Step ${step} of 3`;
+
+            const progressBar = document.getElementById('step-progress-bar');
+            if (step === 1) progressBar.style.width = '33%';
+            else if (step === 2) progressBar.style.width = '66%';
+            else if (step === 3) progressBar.style.width = '100%';
+        }
+
+        function selectTimeSlot(time, btn) {
+            wizardData.time = time;
+            document.querySelectorAll('.time-slot-btn').forEach(b => b.classList.remove('bg-terracotta', 'text-stone'));
+            btn.classList.add('bg-terracotta', 'text-stone');
+        }
+
+        function selectSeatingArea(seating, card) {
+            wizardData.seating = seating;
+            document.querySelectorAll('.seating-option-card').forEach(c => c.classList.replace('border-2', 'border'));
+            card.classList.replace('border', 'border-2');
+        }
+
+        function submitReservationWizard(e) {
+            e.preventDefault();
+            wizardData.guests = document.getElementById('wiz-guests').value;
+            wizardData.date = document.getElementById('wiz-date').value;
+            wizardData.name = document.getElementById('wiz-name').value;
+            wizardData.phone = document.getElementById('wiz-phone').value;
+
+            document.getElementById('booking-summary-box').innerHTML = `
+                <div class="flex justify-between"><span>Guest:</span> <strong>${wizardData.name}</strong></div>
+                <div class="flex justify-between"><span>Phone:</span> <strong>${wizardData.phone}</strong></div>
+                <div class="flex justify-between"><span>Date & Time:</span> <strong>${wizardData.date} at ${wizardData.time}</strong></div>
+                <div class="flex justify-between"><span>Party Size:</span> <strong>${wizardData.guests}</strong></div>
+                <div class="flex justify-between"><span>Seating:</span> <strong>${wizardData.seating}</strong></div>
+            `;
+
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+            goToStep(1);
+            document.getElementById('wizard-reservation-form').reset();
+        }
+
+        function openOrderModal() { document.getElementById('order-modal').classList.remove('hidden'); }
+        function closeOrderModal() { document.getElementById('order-modal').classList.add('hidden'); }
+        function scrollToReservation() { document.getElementById('experience').scrollIntoView({ behavior: 'smooth' }); }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
+
+        function initHeroParticles() {
+            const canvas = document.getElementById('hero-particles');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const particles = Array.from({ length: 30 }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2 + 0.5,
+                color: Math.random() > 0.5 ? '#D4AF37' : '#FAF6F0',
+                alpha: Math.random() * 0.5 + 0.2,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: -Math.random() * 0.5 - 0.2
+            }));
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.y < 0) p.y = canvas.height;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = p.alpha;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+        }
+
+        window.onload = function() {
+            renderMenu();
+            initHeroParticles();
+            const dateInput = document.getElementById('wiz-date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+                dateInput.value = today;
+            }
+        };
+    </script>
+</body>
+</html>
