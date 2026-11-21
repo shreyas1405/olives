@@ -1,0 +1,16 @@
+{
+  "_comment": "Gallery tiles in display order. Put the photo in images/gallery/ and set 'src'. An empty 'src' shows a blank tile. 'size' can be 'tall', 'wide' or ''.",
+  "photos": [
+    { "src": "images/gallery/interior-stairs.jpg", "caption": "The painted courtyard wall and stairway", "size": "tall" },
+    { "src": "images/menu/pizza_olive.jpg", "caption": "Pizza Pomodoro al Pesto", "size": "" },
+    { "src": "", "caption": "The front entrance, by evening", "size": "wide" },
+    { "src": "images/menu/pasta.jpg", "caption": "Spaghetti al Funghi e Spinaci", "size": "" },
+    { "src": "", "caption": "Our wood-fired oven at work", "size": "" },
+    { "src": "", "caption": "The reading corner and bookshelf", "size": "tall" },
+    { "src": "images/menu/punch.jpg", "caption": "Herbs n Olives Punch", "size": "" },
+    { "src": "", "caption": "Courtyard seating under the bougainvillea", "size": "wide" },
+    { "src": "images/menu/pizza_paneer.jpg", "caption": "Indiano Cottage Cheese Delight", "size": "" },
+    { "src": "", "caption": "Dessert: Brownie Sizzler", "size": "" },
+    { "src": "", "caption": "Our kitchen team", "size": "" }
+  ]
+}
